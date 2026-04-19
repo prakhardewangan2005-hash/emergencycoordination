@@ -32,7 +32,7 @@ export function Header() {
             return (
               <li key={item.to}>
                 <Link
-                  to={item.to}
+                  to={item.to as "/"}
                   className="group relative flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-medium text-text-secondary transition-all duration-220 hover:text-text-primary"
                 >
                   <span className="relative">
