@@ -68,7 +68,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden px-6 pt-32 md:pt-40">
+    <section className="relative flex items-center overflow-hidden px-6 pt-28 pb-16 md:pt-32 md:pb-20">
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-60" />
 
       {/* Centered radar pulse from origin */}
@@ -87,8 +87,8 @@ function Hero() {
         </div>
       )}
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-12 lg:grid-cols-12">
-        <div className="lg:col-span-7">
+      <div className="relative z-10 mx-auto grid w-full max-w-[1200px] grid-cols-1 items-center gap-10 lg:grid-cols-12">
+        <div className="lg:col-span-6">
           <div className="overflow-hidden">
             <p
               className={`kicker transition-all duration-500 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
@@ -101,23 +101,20 @@ function Hero() {
             </p>
           </div>
 
-          <h1 className="display-xl mt-6 text-text-primary text-balance">
+          <h1 className="mt-5 text-text-secondary text-balance font-display font-semibold leading-[1.04] tracking-[-0.035em] text-[36px] md:text-[52px] lg:text-[60px]">
             <HeadlineLine show={step >= 3} delay={0}>
               When disaster strikes, seconds save lives —
             </HeadlineLine>
             <HeadlineLine show={step >= 3} delay={180}>
-              <span className="text-text-secondary">but fragmented communication costs them.</span>
+              but fragmented communication costs them.
             </HeadlineLine>
             <HeadlineLine show={step >= 3} delay={360}>
-              Signal is the coordination layer{" "}
-              <span className="bg-gradient-to-r from-violet to-cyan bg-clip-text text-transparent">
-                built for the moments that matter most.
-              </span>
+              Signal is the coordination layer built for the moments that matter most.
             </HeadlineLine>
           </h1>
 
           <div
-            className={`mt-10 flex flex-wrap items-center gap-3 transition-all duration-700 ${step >= 4 ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
+            className={`mt-8 flex flex-wrap items-center gap-3 transition-all duration-700 ${step >= 4 ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
           >
             <Link to="/case-study" className="btn-violet">
               View Full Case Study <span aria-hidden>→</span>
@@ -128,9 +125,9 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative lg:col-span-5">
+        <div className="relative lg:col-span-6">
           <div
-            className={`tilt-card transition-all duration-1000 ${step >= 5 ? "translate-y-0 opacity-100 blur-0" : "translate-y-12 opacity-0 blur-md"}`}
+            className={`tilt-card extrude-3d transition-all duration-1000 ${step >= 5 ? "translate-y-0 opacity-100 blur-0" : "translate-y-12 opacity-0 blur-md"}`}
           >
             <div className="tilt-inner relative">
               <div className="absolute inset-x-6 -bottom-8 h-32 rounded-full bg-violet/30 blur-3xl" />
@@ -139,7 +136,7 @@ function Hero() {
                 alt="Signal command dashboard floating in dark space"
                 width={1280}
                 height={960}
-                className="relative w-full"
+                className="relative w-full rounded-2xl"
               />
             </div>
           </div>
