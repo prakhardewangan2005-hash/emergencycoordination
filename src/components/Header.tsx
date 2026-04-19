@@ -1,14 +1,15 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { SignalLogo } from "./SignalLogo";
 
-const NAV = [
+type NavItem = { to: string; label: string; live?: boolean };
+const NAV: NavItem[] = [
   { to: "/", label: "Overview" },
   { to: "/product", label: "Product", live: true },
   { to: "/case-study", label: "Case Study" },
   { to: "/process", label: "Process" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
-] as const;
+];
 
 export function Header() {
   const { location } = useRouterState();
