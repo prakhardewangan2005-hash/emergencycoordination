@@ -54,7 +54,7 @@ function CaseHero() {
             the seconds that matter.
           </span>
         </h1>
-        <div className="mt-14 grid max-w-[920px] grid-cols-2 gap-x-8 gap-y-6 border-t border-border-subtle pt-8 md:grid-cols-4">
+        <div className="mt-14 grid max-w-[920px] grid-cols-2 gap-x-8 gap-y-6 pt-8 md:grid-cols-4">
           {[
             ["Role", "Sole Product Designer"],
             ["Duration", "14 weeks · 2025–26"],
