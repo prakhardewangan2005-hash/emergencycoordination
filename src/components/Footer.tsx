@@ -59,8 +59,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-8 flex max-w-[1280px] flex-col items-start justify-between gap-3 border-t border-border-subtle/40 pt-6 text-[12px] text-text-tertiary md:flex-row md:items-center">
-        <p>© 2026 Signal Case Study · Designed &amp; prototyped by Your Name</p>
-        <p className="font-mono">Last deployed drill: 19 Apr 2026</p>
+        <p>© 2026 Signal Case Study · Designed &amp; prototyped by Prakhar Dewangan</p>
       </div>
     </footer>
   );
