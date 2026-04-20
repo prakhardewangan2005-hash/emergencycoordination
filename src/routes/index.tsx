@@ -71,6 +71,9 @@ function Hero() {
     <section className="relative flex items-center overflow-hidden px-6 pt-28 pb-16 md:pt-32 md:pb-20">
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-60" />
 
+      {/* Continuous drifting broken star */}
+      <DriftingStar />
+
       {/* Centered radar pulse from origin */}
       {step >= 1 && (
         <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -140,7 +143,6 @@ function Hero() {
                 width={1280}
                 height={960}
                 className="hero-extruded relative w-full"
-                style={{ mixBlendMode: "screen" }}
               />
             </div>
           </div>
@@ -181,6 +183,68 @@ function HeadlineLine({
         {children}
       </span>
     </span>
+  );
+}
+
+/* Continuously drifting glowing broken star — a signature ambient detail */
+function DriftingStar() {
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+      <svg
+        width="42"
+        height="42"
+        viewBox="0 0 24 24"
+        className="absolute top-[22%]"
+        style={{
+          left: 0,
+          color: "#c4b5fd",
+          filter:
+            "drop-shadow(0 0 12px rgba(196,181,253,0.9)) drop-shadow(0 0 28px rgba(139,92,246,0.7)) drop-shadow(0 0 48px rgba(6,182,212,0.4))",
+          animation: "drift 18s linear infinite",
+        }}
+      >
+        <path
+          d="M12 2 L13.4 10.6 L22 12 L13.4 13.4 L12 22 L10.6 13.4 L2 12 L10.6 10.6 Z"
+          fill="currentColor"
+        />
+      </svg>
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        className="absolute top-[58%]"
+        style={{
+          left: 0,
+          color: "#67e8f9",
+          filter:
+            "drop-shadow(0 0 10px rgba(103,232,249,0.95)) drop-shadow(0 0 24px rgba(6,182,212,0.7))",
+          animation: "drift 22s linear 4s infinite",
+        }}
+      >
+        <path
+          d="M12 2 L13.4 10.6 L22 12 L13.4 13.4 L12 22 L10.6 13.4 L2 12 L10.6 10.6 Z"
+          fill="currentColor"
+        />
+      </svg>
+      <svg
+        width="34"
+        height="34"
+        viewBox="0 0 24 24"
+        className="absolute top-[78%]"
+        style={{
+          left: 0,
+          color: "#e9d5ff",
+          filter:
+            "drop-shadow(0 0 10px rgba(233,213,255,0.9)) drop-shadow(0 0 26px rgba(139,92,246,0.6))",
+          animation: "drift 26s linear 9s infinite",
+        }}
+      >
+        <path
+          d="M12 2 L13.4 10.6 L22 12 L13.4 13.4 L12 22 L10.6 13.4 L2 12 L10.6 10.6 Z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
   );
 }
 
