@@ -127,16 +127,20 @@ function Hero() {
 
         <div className="relative lg:col-span-6">
           <div
-            className={`tilt-card extrude-3d transition-all duration-1000 ${step >= 5 ? "translate-y-0 opacity-100 blur-0" : "translate-y-12 opacity-0 blur-md"}`}
+            className={`tilt-card transition-all duration-1000 ${step >= 5 ? "translate-y-0 opacity-100 blur-0" : "translate-y-12 opacity-0 blur-md"}`}
           >
             <div className="tilt-inner relative">
-              <div className="absolute inset-x-6 -bottom-8 h-32 rounded-full bg-violet/30 blur-3xl" />
+              {/* Multi-layer ambient glow for full extrusion */}
+              <div className="absolute -inset-10 rounded-[40px] bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.45),transparent_60%)] blur-3xl" />
+              <div className="absolute -inset-6 rounded-[40px] bg-[radial-gradient(ellipse_at_30%_70%,rgba(6,182,212,0.35),transparent_55%)] blur-3xl" />
+              <div className="absolute inset-x-10 -bottom-10 h-40 rounded-full bg-violet/40 blur-3xl" />
               <img
                 src={heroDevice}
                 alt="Signal command dashboard floating in dark space"
                 width={1280}
                 height={960}
-                className="relative w-full rounded-2xl"
+                className="hero-extruded relative w-full"
+                style={{ mixBlendMode: "screen" }}
               />
             </div>
           </div>

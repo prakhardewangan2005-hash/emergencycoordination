@@ -47,24 +47,9 @@ function CaseHero() {
   return (
     <section className="relative px-6 pt-40 md:pt-48">
       <div className="mx-auto max-w-[1280px]">
-        <h1 className="glow-headline display-xl mt-6 max-w-[1100px] text-balance">
+        <h1 className="glow-headline-3d mt-6 max-w-[1100px] text-balance text-[clamp(48px,9vw,140px)] font-semibold leading-[0.95] tracking-[-0.04em]">
           the seconds that matter.
         </h1>
-        <div className="mt-14 grid max-w-[920px] grid-cols-2 gap-x-8 gap-y-6 pt-8 md:grid-cols-4">
-          {[
-            ["Role", "Sole Product Designer"],
-            ["Duration", "14 weeks · 2025–26"],
-            ["Team", "1 designer · 2 advisors"],
-            ["Tools", "Figma · Origami · Rive"],
-          ].map(([k, v]) => (
-            <div key={k}>
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-text-tertiary">
-                {k}
-              </p>
-              <p className="mt-2 text-[14px] font-medium">{v}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
