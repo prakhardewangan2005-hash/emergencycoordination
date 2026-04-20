@@ -101,7 +101,7 @@ function Hero() {
             </p>
           </div>
 
-          <h1 className="mt-5 text-text-secondary text-balance font-display font-semibold leading-[1.04] tracking-[-0.035em] text-[36px] md:text-[52px] lg:text-[60px]">
+          <h1 className="mt-5 text-left text-text-secondary text-balance font-display font-semibold leading-[1.05] tracking-[-0.03em] text-[26px] md:text-[34px] lg:text-[40px]">
             <HeadlineLine show={step >= 3} delay={0}>
               When disaster strikes, seconds save lives —
             </HeadlineLine>

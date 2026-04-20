@@ -47,12 +47,8 @@ function CaseHero() {
   return (
     <section className="relative px-6 pt-40 md:pt-48">
       <div className="mx-auto max-w-[1280px]">
-        <p className="kicker">Case Study · 14 weeks</p>
-        <h1 className="display-xl mt-6 max-w-[1100px] text-balance">
-          Signal — a 14-week case study in designing for{" "}
-          <span className="bg-gradient-to-r from-violet to-cyan bg-clip-text text-transparent">
-            the seconds that matter.
-          </span>
+        <h1 className="glow-headline display-xl mt-6 max-w-[1100px] text-balance">
+          the seconds that matter.
         </h1>
         <div className="mt-14 grid max-w-[920px] grid-cols-2 gap-x-8 gap-y-6 pt-8 md:grid-cols-4">
           {[
