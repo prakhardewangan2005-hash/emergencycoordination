@@ -77,7 +77,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative flex items-center overflow-hidden px-6 pt-28 pb-16 md:pt-32 md:pb-20">
+    <section id="hero" className="relative flex items-center overflow-hidden px-6 pt-28 pb-16 md:pt-32 md:pb-20">
       {/* Deep purple radial gradient backdrop (Milad-inspired theme) */}
       <div className="pointer-events-none absolute inset-0 hero-purple-bg" />
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-25" />
