@@ -226,6 +226,61 @@ function DriftingStar() {
   );
 }
 
+/* Live "breathing" sphere-grid behind the hero — shrinks and expands continuously.
+ * Built procedurally from concentric rings of dots to evoke the reference image. */
+function SphereGridBackdrop() {
+  const rings = 14;        // concentric rings (front-to-back depth feel)
+  const dotsPerRing = 56;  // density on the outermost ring
+
+  const dots: Array<{ cx: number; cy: number; r: number; o: number }> = [];
+  for (let i = 0; i < rings; i++) {
+    const t = i / (rings - 1);                  // 0 = outer, 1 = inner
+    const radius = 360 - t * 320;               // shrinking radius for perspective
+    const yScale = 0.42 + t * 0.18;             // flatten to feel like a dome
+    const yOffset = t * 90;                     // push inner rings down
+    const count = Math.max(6, Math.round(dotsPerRing * (1 - t * 0.85)));
+    const rDot = 1.6 + (1 - t) * 1.3;
+    const opacity = 0.18 + (1 - t) * 0.55;
+    for (let j = 0; j < count; j++) {
+      const a = (j / count) * Math.PI * 2;
+      dots.push({
+        cx: 500 + Math.cos(a) * radius,
+        cy: 360 + Math.sin(a) * radius * yScale + yOffset,
+        r: rDot,
+        o: opacity,
+      });
+    }
+  }
+
+  return (
+    <div
+      aria-hidden
+      className="sphere-grid pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2"
+      style={{ width: "min(1100px, 110vw)" }}
+    >
+      <svg viewBox="0 0 1000 720" className="h-auto w-full">
+        <defs>
+          <radialGradient id="sphereDotGrad" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stopColor="#e9d5ff" stopOpacity="1" />
+            <stop offset="55%" stopColor="#a78bfa" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#4c1d95" stopOpacity="0.2" />
+          </radialGradient>
+        </defs>
+        {dots.map((d, i) => (
+          <circle
+            key={i}
+            cx={d.cx}
+            cy={d.cy}
+            r={d.r}
+            fill="url(#sphereDotGrad)"
+            opacity={d.o}
+          />
+        ))}
+      </svg>
+    </div>
+  );
+}
+
 function PlayIcon() {
   return (
     <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden>
