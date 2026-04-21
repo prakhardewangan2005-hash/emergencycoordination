@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { PageShell } from "@/components/PageShell";
 import { FloatingCard } from "@/components/FloatingCard";
+import { SectionScroller } from "@/components/SectionScroller";
 import { useReveal } from "@/hooks/useReveal";
 import heroDevice from "@/assets/hero-command.png";
 
@@ -29,6 +30,14 @@ function Overview() {
   const ref = useReveal();
   return (
     <PageShell>
+      <SectionScroller
+        sections={[
+          { id: "hero", label: "Hero" },
+          { id: "problem", label: "Problem" },
+          { id: "before-after", label: "Before / After" },
+          { id: "features", label: "Features" },
+        ]}
+      />
       <div ref={ref}>
         <Hero />
         <LogoMarquee />
@@ -68,7 +77,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative flex items-center overflow-hidden px-6 pt-28 pb-16 md:pt-32 md:pb-20">
+    <section id="hero" className="relative flex items-center overflow-hidden px-6 pt-28 pb-16 md:pt-32 md:pb-20">
       {/* Deep purple radial gradient backdrop (Milad-inspired theme) */}
       <div className="pointer-events-none absolute inset-0 hero-purple-bg" />
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-25" />
@@ -338,7 +347,7 @@ function ProblemSection() {
     },
   ];
   return (
-    <section className="relative px-6 py-32 md:py-40">
+    <section id="problem" className="relative px-6 py-32 md:py-40">
       <div className="mx-auto max-w-[1280px]">
         <div className="reveal mb-16 max-w-[760px]">
           <p className="kicker">The problem</p>
@@ -372,7 +381,7 @@ function ProblemSection() {
  * ============================================================ */
 function BeforeAfterSection() {
   return (
-    <section className="relative px-6 py-32 md:py-40">
+    <section id="before-after" className="relative px-6 py-32 md:py-40">
       <div className="mx-auto max-w-[1280px]">
         <div className="reveal mb-16 max-w-[820px]">
           <p className="kicker">Before / After</p>
@@ -522,7 +531,7 @@ function FeaturesSection() {
     },
   ];
   return (
-    <section className="relative px-6 py-32 md:py-40">
+    <section id="features" className="relative px-6 py-32 md:py-40">
       <div className="mx-auto max-w-[1280px]">
         <div className="reveal mb-16 max-w-[760px]">
           <p className="kicker">What's inside Signal</p>

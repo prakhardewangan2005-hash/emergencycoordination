@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { FloatingCard } from "@/components/FloatingCard";
+import { SectionScroller } from "@/components/SectionScroller";
 import { useReveal } from "@/hooks/useReveal";
 import commandImg from "@/assets/hero-command.png";
 import meshImg from "@/assets/mockup-mesh.png";
@@ -22,6 +23,14 @@ function CaseStudyPage() {
   const ref = useReveal();
   return (
     <PageShell>
+      <SectionScroller
+        sections={[
+          { id: "cs-hero", label: "Intro" },
+          { id: "cs-prompt", label: "Prompt" },
+          { id: "cs-research", label: "Research" },
+          { id: "cs-framing", label: "Framing" },
+        ]}
+      />
       <div ref={ref}>
         <CaseHero />
         <Prompt />
@@ -45,7 +54,7 @@ function CaseStudyPage() {
 /* ----- 0. Hero ----- */
 function CaseHero() {
   return (
-    <section className="relative px-6 pt-40 md:pt-48">
+    <section id="cs-hero" className="relative px-6 pt-40 md:pt-48">
       <div className="mx-auto max-w-[1280px]">
         <h1 className="glow-headline-3d mt-6 max-w-[1100px] text-balance text-[clamp(48px,9vw,140px)] font-semibold leading-[0.95] tracking-[-0.04em]">
           the seconds that matter.
@@ -61,14 +70,16 @@ function Section({
   kicker,
   title,
   children,
+  id,
 }: {
   num: string;
   kicker: string;
   title: string;
   children: React.ReactNode;
+  id?: string;
 }) {
   return (
-    <section className="relative px-6 py-32 md:py-40">
+    <section id={id} className="relative px-6 py-32 md:py-40">
       <div className="mx-auto max-w-[1280px]">
         <div className="reveal mb-12 max-w-[860px]">
           <div className="flex items-center gap-3">
@@ -87,7 +98,7 @@ function Section({
 /* ----- 1. Prompt ----- */
 function Prompt() {
   return (
-    <Section num="01" kicker="The prompt" title="Reframing emergency coordination as a product, not a bureaucracy.">
+    <Section id="cs-prompt" num="01" kicker="The prompt" title="Reframing emergency coordination as a product, not a bureaucracy.">
       <div className="reveal max-w-[820px]">
         <p className="text-[20px] leading-[1.6] text-text-secondary">
           What would emergency coordination look like if it were designed as a product, not
@@ -124,7 +135,7 @@ function Research() {
   ];
 
   return (
-    <Section num="02" kicker="Research" title="Eleven interviews. Two field deployments. Six teardowns.">
+    <Section id="cs-research" num="02" kicker="Research" title="Eleven interviews. Two field deployments. Six teardowns.">
       <div className="reveal mb-10 max-w-[760px] text-[15px] leading-[1.7] text-text-secondary">
         Research grounded the work in lived reality — not what dashboards looked like, but what they
         felt like at 3am with sirens going.
@@ -177,7 +188,7 @@ function Research() {
 /* ----- 3. Framing ----- */
 function Framing() {
   return (
-    <Section num="03" kicker="Problem framing" title="Mapping the jobs the system actually has to do.">
+    <Section id="cs-framing" num="03" kicker="Problem framing" title="Mapping the jobs the system actually has to do.">
       <div className="reveal grid grid-cols-1 gap-5 md:grid-cols-3">
         {[
           { job: "Decide", body: "Surface what matters next, with the context to act on it." },
