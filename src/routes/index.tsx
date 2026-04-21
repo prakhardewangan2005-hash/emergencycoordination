@@ -256,9 +256,9 @@ function SphereGridBackdrop() {
     <div
       aria-hidden
       className="sphere-grid pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2"
-      style={{ width: "max(1600px, 140vw)", height: "auto" }}
+      style={{ width: "min(1100px, 110vw)" }}
     >
-      <svg viewBox="0 0 1000 720" preserveAspectRatio="xMidYMid slice" className="h-auto w-full">
+      <svg viewBox="0 0 1000 720" className="h-auto w-full">
         <defs>
           <radialGradient id="sphereDotGrad" cx="50%" cy="40%" r="60%">
             <stop offset="0%" stopColor="#e9d5ff" stopOpacity="1" />
