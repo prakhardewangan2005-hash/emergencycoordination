@@ -122,9 +122,6 @@ function Hero() {
             <Link to="/case-study" className="btn-violet">
               View Full Case Study <span aria-hidden>→</span>
             </Link>
-            <button className="btn-ghost">
-              <PlayIcon /> Watch 90-sec walkthrough
-            </button>
           </div>
         </div>
 
