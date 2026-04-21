@@ -489,8 +489,8 @@
   will-change: transform, filter;
 }
 @keyframes hero-float {
-  0%, 100% { transform: translateY(0) rotateX(6deg) rotateY(-4deg) translateZ(0); }
-  50%      { transform: translateY(-14px) rotateX(6deg) rotateY(-4deg) translateZ(20px); }
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
 }
 @keyframes hero-glow-pulse {
   0%, 100% {
@@ -525,13 +525,11 @@
     0 0 28px rgba(139, 92, 246, 0.75),
     0 0 60px rgba(6, 182, 212, 0.45),
     0 0 100px rgba(139, 92, 246, 0.3);
-  animation: neon-stomp 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite,
-             neon-flicker 6s ease-in-out infinite;
-  will-change: text-shadow, transform;
+  animation: neon-glow 4s ease-in-out infinite;
+  will-change: text-shadow;
 }
-@keyframes neon-stomp {
+@keyframes neon-glow {
   0%, 100% {
-    transform: scale(1);
     text-shadow:
       0 0 4px rgba(245, 245, 247, 0.9),
       0 0 12px rgba(196, 181, 253, 0.85),
@@ -540,21 +538,13 @@
       0 0 100px rgba(139, 92, 246, 0.3);
   }
   50% {
-    transform: scale(1.012);
     text-shadow:
       0 0 6px rgba(255, 255, 255, 1),
-      0 0 20px rgba(196, 181, 253, 1),
-      0 0 44px rgba(139, 92, 246, 1),
-      0 0 90px rgba(6, 182, 212, 0.7),
-      0 0 150px rgba(139, 92, 246, 0.55);
+      0 0 18px rgba(196, 181, 253, 0.95),
+      0 0 38px rgba(139, 92, 246, 0.9),
+      0 0 80px rgba(6, 182, 212, 0.6),
+      0 0 130px rgba(139, 92, 246, 0.45);
   }
-}
-@keyframes neon-flicker {
-  0%, 92%, 100% { opacity: 1; }
-  93% { opacity: 0.85; }
-  94% { opacity: 1; }
-  96% { opacity: 0.92; }
-  97% { opacity: 1; }
 }
 
 /* ---------- 3D Glowing Headline (case study) ---------- */
