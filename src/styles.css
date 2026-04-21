@@ -136,6 +136,11 @@
   0%, 100% { background-position: 0% 50%; opacity: 0.7; }
   50%      { background-position: 100% 50%; opacity: 1; }
 }
+@keyframes gold-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.08); }
+}
+.animate-gold-pulse { animation: gold-pulse 5s ease-in-out infinite; }
 
 /* ---------- Base ---------- */
 
@@ -441,19 +446,24 @@
 /* Global card extrusion — gives every floating-card a subtle 3D edge */
 .floating-card {
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.4),
-    0 1px 0 rgba(255, 255, 255, 0.03),
-    0 18px 40px -24px rgba(0, 0, 0, 0.85),
-    0 0 30px -10px rgba(180, 160, 255, 0.18);
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(180, 160, 255, 0.06),
+    0 2px 0 rgba(255, 255, 255, 0.04),
+    0 30px 60px -20px rgba(0, 0, 0, 0.95),
+    0 50px 100px -40px rgba(139, 92, 246, 0.35),
+    0 0 50px -10px rgba(180, 160, 255, 0.28);
+  transform: translateZ(0);
 }
 .floating-card:hover {
   box-shadow:
-    inset 0 0 0 1px rgba(139, 92, 246, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 28px 70px -20px rgba(139, 92, 246, 0.35),
-    0 8px 24px -12px rgba(6, 182, 212, 0.22),
-    0 0 60px -10px rgba(220, 220, 255, 0.25);
+    inset 0 0 0 1px rgba(139, 92, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.5),
+    0 40px 90px -20px rgba(139, 92, 246, 0.5),
+    0 60px 120px -30px rgba(6, 182, 212, 0.35),
+    0 12px 32px -12px rgba(6, 182, 212, 0.3),
+    0 0 80px -10px rgba(220, 220, 255, 0.4);
 }
 
 /* ---------- Hero image: fully extruded from background ---------- */
@@ -464,6 +474,87 @@
     drop-shadow(0 0 40px rgba(180, 160, 255, 0.4))
     contrast(1.08)
     saturate(1.15);
+}
+
+/* ---------- Hero image XL — 8K float, live-floating, extreme extrusion ---------- */
+.hero-extruded-xl {
+  filter:
+    drop-shadow(0 50px 80px rgba(139, 92, 246, 0.7))
+    drop-shadow(0 100px 160px rgba(6, 182, 212, 0.45))
+    drop-shadow(0 0 60px rgba(196, 181, 253, 0.55))
+    drop-shadow(0 0 120px rgba(139, 92, 246, 0.3))
+    contrast(1.12)
+    saturate(1.25);
+  animation: hero-float 7s ease-in-out infinite, hero-glow-pulse 4s ease-in-out infinite;
+  will-change: transform, filter;
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0) rotateX(6deg) rotateY(-4deg) translateZ(0); }
+  50%      { transform: translateY(-14px) rotateX(6deg) rotateY(-4deg) translateZ(20px); }
+}
+@keyframes hero-glow-pulse {
+  0%, 100% {
+    filter:
+      drop-shadow(0 50px 80px rgba(139, 92, 246, 0.7))
+      drop-shadow(0 100px 160px rgba(6, 182, 212, 0.45))
+      drop-shadow(0 0 60px rgba(196, 181, 253, 0.55))
+      drop-shadow(0 0 120px rgba(139, 92, 246, 0.3))
+      contrast(1.12) saturate(1.25);
+  }
+  50% {
+    filter:
+      drop-shadow(0 50px 90px rgba(139, 92, 246, 0.85))
+      drop-shadow(0 100px 180px rgba(6, 182, 212, 0.55))
+      drop-shadow(0 0 80px rgba(196, 181, 253, 0.7))
+      drop-shadow(0 0 160px rgba(139, 92, 246, 0.45))
+      contrast(1.14) saturate(1.3);
+  }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.05); }
+}
+.animate-pulse-glow { animation: pulse-glow 5s ease-in-out infinite; }
+
+/* ---------- Neon stomp headline ---------- */
+.neon-stomp {
+  color: #f5f5f7;
+  text-shadow:
+    0 0 4px rgba(245, 245, 247, 0.9),
+    0 0 12px rgba(196, 181, 253, 0.85),
+    0 0 28px rgba(139, 92, 246, 0.75),
+    0 0 60px rgba(6, 182, 212, 0.45),
+    0 0 100px rgba(139, 92, 246, 0.3);
+  animation: neon-stomp 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite,
+             neon-flicker 6s ease-in-out infinite;
+  will-change: text-shadow, transform;
+}
+@keyframes neon-stomp {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow:
+      0 0 4px rgba(245, 245, 247, 0.9),
+      0 0 12px rgba(196, 181, 253, 0.85),
+      0 0 28px rgba(139, 92, 246, 0.75),
+      0 0 60px rgba(6, 182, 212, 0.45),
+      0 0 100px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    transform: scale(1.012);
+    text-shadow:
+      0 0 6px rgba(255, 255, 255, 1),
+      0 0 20px rgba(196, 181, 253, 1),
+      0 0 44px rgba(139, 92, 246, 1),
+      0 0 90px rgba(6, 182, 212, 0.7),
+      0 0 150px rgba(139, 92, 246, 0.55);
+  }
+}
+@keyframes neon-flicker {
+  0%, 92%, 100% { opacity: 1; }
+  93% { opacity: 0.85; }
+  94% { opacity: 1; }
+  96% { opacity: 0.92; }
+  97% { opacity: 1; }
 }
 
 /* ---------- 3D Glowing Headline (case study) ---------- */

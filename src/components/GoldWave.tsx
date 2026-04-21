@@ -7,10 +7,11 @@ export function GoldWave() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none relative -mb-px h-[140px] w-full overflow-hidden md:h-[180px]"
+      className="pointer-events-none relative -mb-px h-[200px] w-full overflow-visible md:h-[260px]"
     >
-      {/* Soft gold halo */}
-      <div className="absolute inset-x-0 bottom-0 h-[120px] bg-[radial-gradient(ellipse_at_center_bottom,rgba(251,191,36,0.28),rgba(245,158,11,0.12)_40%,transparent_72%)] blur-2xl" />
+      {/* Expanded multi-layer gold halo — spreads further outward */}
+      <div className="absolute -inset-x-20 -top-24 bottom-0 bg-[radial-gradient(ellipse_at_center_bottom,rgba(251,191,36,0.45),rgba(245,158,11,0.22)_35%,rgba(251,191,36,0.08)_60%,transparent_82%)] blur-3xl" />
+      <div className="absolute -inset-x-40 -top-16 bottom-0 bg-[radial-gradient(ellipse_at_center_bottom,rgba(253,224,71,0.3),transparent_70%)] blur-3xl animate-gold-pulse" />
 
       {/* Wave 1 */}
       <svg
