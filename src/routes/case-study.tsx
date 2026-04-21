@@ -54,7 +54,7 @@ function CaseStudyPage() {
 /* ----- 0. Hero ----- */
 function CaseHero() {
   return (
-    <section className="relative px-6 pt-40 md:pt-48">
+    <section id="cs-hero" className="relative px-6 pt-40 md:pt-48">
       <div className="mx-auto max-w-[1280px]">
         <h1 className="glow-headline-3d mt-6 max-w-[1100px] text-balance text-[clamp(48px,9vw,140px)] font-semibold leading-[0.95] tracking-[-0.04em]">
           the seconds that matter.
@@ -70,14 +70,16 @@ function Section({
   kicker,
   title,
   children,
+  id,
 }: {
   num: string;
   kicker: string;
   title: string;
   children: React.ReactNode;
+  id?: string;
 }) {
   return (
-    <section className="relative px-6 py-32 md:py-40">
+    <section id={id} className="relative px-6 py-32 md:py-40">
       <div className="mx-auto max-w-[1280px]">
         <div className="reveal mb-12 max-w-[860px]">
           <div className="flex items-center gap-3">
