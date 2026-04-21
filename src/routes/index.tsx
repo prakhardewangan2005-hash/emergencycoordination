@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { PageShell } from "@/components/PageShell";
 import { FloatingCard } from "@/components/FloatingCard";
+import { SectionScroller } from "@/components/SectionScroller";
 import { useReveal } from "@/hooks/useReveal";
 import heroDevice from "@/assets/hero-command.png";
 
@@ -29,6 +30,14 @@ function Overview() {
   const ref = useReveal();
   return (
     <PageShell>
+      <SectionScroller
+        sections={[
+          { id: "hero", label: "Hero" },
+          { id: "problem", label: "Problem" },
+          { id: "before-after", label: "Before / After" },
+          { id: "features", label: "Features" },
+        ]}
+      />
       <div ref={ref}>
         <Hero />
         <LogoMarquee />
