@@ -90,8 +90,8 @@ function Hero() {
         </div>
       )}
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1200px] grid-cols-1 items-center gap-10 lg:grid-cols-12">
-        <div className="lg:col-span-6">
+      <div className="relative z-10 mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-10">
+        <div className="md:col-span-6">
           <div className="overflow-hidden">
             <p
               className={`kicker transition-all duration-500 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
@@ -104,7 +104,7 @@ function Hero() {
             </p>
           </div>
 
-          <h1 className="mt-5 text-left text-text-secondary text-balance font-display font-semibold leading-[1.05] tracking-[-0.03em] text-[26px] md:text-[34px] lg:text-[40px]">
+          <h1 className="mt-5 text-left text-text-secondary text-balance font-display font-semibold leading-[1.05] tracking-[-0.03em] text-[24px] md:text-[30px] lg:text-[38px]">
             <HeadlineLine show={step >= 3} delay={0}>
               When disaster strikes, seconds save lives —
             </HeadlineLine>
@@ -128,7 +128,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative lg:col-span-6">
+        <div className="relative md:col-span-6">
           <div
             className={`tilt-card transition-all duration-1000 ${step >= 5 ? "translate-y-0 opacity-100 blur-0" : "translate-y-12 opacity-0 blur-md"}`}
           >
@@ -188,62 +188,37 @@ function HeadlineLine({
 
 /* Continuously drifting glowing broken star — a signature ambient detail */
 function DriftingStar() {
+  const stars = [
+    { top: "12%", size: 38, color: "#c4b5fd", glow: "rgba(196,181,253,0.95)", deep: "rgba(139,92,246,0.7)", dur: 6, delay: 0 },
+    { top: "26%", size: 24, color: "#67e8f9", glow: "rgba(103,232,249,0.95)", deep: "rgba(6,182,212,0.7)", dur: 5, delay: 0.7 },
+    { top: "42%", size: 32, color: "#e9d5ff", glow: "rgba(233,213,255,0.95)", deep: "rgba(139,92,246,0.6)", dur: 7, delay: 1.4 },
+    { top: "58%", size: 20, color: "#a5f3fc", glow: "rgba(165,243,252,0.95)", deep: "rgba(6,182,212,0.6)", dur: 5.5, delay: 2.1 },
+    { top: "72%", size: 36, color: "#c4b5fd", glow: "rgba(196,181,253,0.95)", deep: "rgba(139,92,246,0.7)", dur: 6.5, delay: 2.8 },
+    { top: "86%", size: 26, color: "#67e8f9", glow: "rgba(103,232,249,0.95)", deep: "rgba(6,182,212,0.65)", dur: 5.8, delay: 3.5 },
+  ];
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-      <svg
-        width="42"
-        height="42"
-        viewBox="0 0 24 24"
-        className="absolute top-[22%]"
-        style={{
-          left: 0,
-          color: "#c4b5fd",
-          filter:
-            "drop-shadow(0 0 12px rgba(196,181,253,0.9)) drop-shadow(0 0 28px rgba(139,92,246,0.7)) drop-shadow(0 0 48px rgba(6,182,212,0.4))",
-          animation: "drift 18s linear infinite",
-        }}
-      >
-        <path
-          d="M12 2 L13.4 10.6 L22 12 L13.4 13.4 L12 22 L10.6 13.4 L2 12 L10.6 10.6 Z"
-          fill="currentColor"
-        />
-      </svg>
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        className="absolute top-[58%]"
-        style={{
-          left: 0,
-          color: "#67e8f9",
-          filter:
-            "drop-shadow(0 0 10px rgba(103,232,249,0.95)) drop-shadow(0 0 24px rgba(6,182,212,0.7))",
-          animation: "drift 22s linear 4s infinite",
-        }}
-      >
-        <path
-          d="M12 2 L13.4 10.6 L22 12 L13.4 13.4 L12 22 L10.6 13.4 L2 12 L10.6 10.6 Z"
-          fill="currentColor"
-        />
-      </svg>
-      <svg
-        width="34"
-        height="34"
-        viewBox="0 0 24 24"
-        className="absolute top-[78%]"
-        style={{
-          left: 0,
-          color: "#e9d5ff",
-          filter:
-            "drop-shadow(0 0 10px rgba(233,213,255,0.9)) drop-shadow(0 0 26px rgba(139,92,246,0.6))",
-          animation: "drift 26s linear 9s infinite",
-        }}
-      >
-        <path
-          d="M12 2 L13.4 10.6 L22 12 L13.4 13.4 L12 22 L10.6 13.4 L2 12 L10.6 10.6 Z"
-          fill="currentColor"
-        />
-      </svg>
+      {stars.map((s, i) => (
+        <svg
+          key={i}
+          width={s.size}
+          height={s.size}
+          viewBox="0 0 24 24"
+          className="absolute"
+          style={{
+            top: s.top,
+            left: 0,
+            color: s.color,
+            filter: `drop-shadow(0 0 10px ${s.glow}) drop-shadow(0 0 24px ${s.deep})`,
+            animation: `drift ${s.dur}s linear ${s.delay}s infinite`,
+          }}
+        >
+          <path
+            d="M12 2 L13.4 10.6 L22 12 L13.4 13.4 L12 22 L10.6 13.4 L2 12 L10.6 10.6 Z"
+            fill="currentColor"
+          />
+        </svg>
+      ))}
     </div>
   );
 }
