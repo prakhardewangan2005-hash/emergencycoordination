@@ -98,7 +98,7 @@ function Section({
 /* ----- 1. Prompt ----- */
 function Prompt() {
   return (
-    <Section num="01" kicker="The prompt" title="Reframing emergency coordination as a product, not a bureaucracy.">
+    <Section id="cs-prompt" num="01" kicker="The prompt" title="Reframing emergency coordination as a product, not a bureaucracy.">
       <div className="reveal max-w-[820px]">
         <p className="text-[20px] leading-[1.6] text-text-secondary">
           What would emergency coordination look like if it were designed as a product, not
@@ -135,7 +135,7 @@ function Research() {
   ];
 
   return (
-    <Section num="02" kicker="Research" title="Eleven interviews. Two field deployments. Six teardowns.">
+    <Section id="cs-research" num="02" kicker="Research" title="Eleven interviews. Two field deployments. Six teardowns.">
       <div className="reveal mb-10 max-w-[760px] text-[15px] leading-[1.7] text-text-secondary">
         Research grounded the work in lived reality — not what dashboards looked like, but what they
         felt like at 3am with sirens going.
@@ -188,7 +188,7 @@ function Research() {
 /* ----- 3. Framing ----- */
 function Framing() {
   return (
-    <Section num="03" kicker="Problem framing" title="Mapping the jobs the system actually has to do.">
+    <Section id="cs-framing" num="03" kicker="Problem framing" title="Mapping the jobs the system actually has to do.">
       <div className="reveal grid grid-cols-1 gap-5 md:grid-cols-3">
         {[
           { job: "Decide", body: "Surface what matters next, with the context to act on it." },
