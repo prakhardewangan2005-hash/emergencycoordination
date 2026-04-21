@@ -347,7 +347,7 @@ function ProblemSection() {
     },
   ];
   return (
-    <section className="relative px-6 py-32 md:py-40">
+    <section id="problem" className="relative px-6 py-32 md:py-40">
       <div className="mx-auto max-w-[1280px]">
         <div className="reveal mb-16 max-w-[760px]">
           <p className="kicker">The problem</p>
