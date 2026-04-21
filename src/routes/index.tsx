@@ -104,7 +104,7 @@ function Hero() {
             </p>
           </div>
 
-          <h1 className="mt-5 text-left text-text-secondary text-balance font-display font-semibold leading-[1.05] tracking-[-0.03em] text-[24px] md:text-[30px] lg:text-[38px]">
+          <h1 className="neon-stomp mt-5 text-left text-balance font-display font-semibold leading-[1.05] tracking-[-0.03em] text-[26px] md:text-[34px] lg:text-[44px]">
             <HeadlineLine show={step >= 3} delay={0}>
               When disaster strikes, seconds save lives —
             </HeadlineLine>
@@ -128,21 +128,22 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative md:col-span-6">
+        <div className="relative md:col-span-6 md:-mr-8 lg:-mr-16">
           <div
             className={`tilt-card transition-all duration-1000 ${step >= 5 ? "translate-y-0 opacity-100 blur-0" : "translate-y-12 opacity-0 blur-md"}`}
           >
-            <div className="tilt-inner relative">
-              {/* Multi-layer ambient glow for full extrusion */}
-              <div className="absolute -inset-10 rounded-[40px] bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.45),transparent_60%)] blur-3xl" />
-              <div className="absolute -inset-6 rounded-[40px] bg-[radial-gradient(ellipse_at_30%_70%,rgba(6,182,212,0.35),transparent_55%)] blur-3xl" />
-              <div className="absolute inset-x-10 -bottom-10 h-40 rounded-full bg-violet/40 blur-3xl" />
+            <div className="tilt-inner relative scale-110 md:scale-[1.18] lg:scale-[1.25]">
+              {/* Multi-layer ambient glow — 8K extrusion */}
+              <div className="absolute -inset-16 rounded-[60px] bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.6),transparent_65%)] blur-3xl animate-pulse-glow" />
+              <div className="absolute -inset-12 rounded-[50px] bg-[radial-gradient(ellipse_at_30%_70%,rgba(6,182,212,0.5),transparent_60%)] blur-3xl" />
+              <div className="absolute -inset-8 rounded-[40px] bg-[radial-gradient(ellipse_at_70%_30%,rgba(196,181,253,0.4),transparent_55%)] blur-3xl" />
+              <div className="absolute inset-x-6 -bottom-14 h-48 rounded-full bg-violet/50 blur-3xl" />
               <img
                 src={heroDevice}
                 alt="Signal command dashboard floating in dark space"
                 width={1280}
                 height={960}
-                className="hero-extruded relative w-full"
+                className="hero-extruded-xl relative w-full"
               />
             </div>
           </div>
