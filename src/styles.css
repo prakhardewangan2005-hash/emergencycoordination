@@ -142,6 +142,44 @@
 }
 .animate-gold-pulse { animation: gold-pulse 5s ease-in-out infinite; }
 
+/* ---------- Hero deep-purple gradient backdrop (Milad-inspired) ---------- */
+.hero-purple-bg {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 45%, rgba(76, 29, 149, 0.55) 0%, rgba(30, 10, 60, 0.35) 45%, transparent 75%),
+    radial-gradient(ellipse 90% 70% at 50% 60%, rgba(15, 6, 35, 0.85) 0%, rgba(7, 7, 11, 1) 80%),
+    linear-gradient(180deg, #07070b 0%, #0a0517 50%, #07070b 100%);
+}
+
+/* ---------- Live "breathing" sphere grid ---------- */
+.sphere-grid {
+  opacity: 0.55;
+  filter:
+    drop-shadow(0 0 30px rgba(139, 92, 246, 0.45))
+    drop-shadow(0 0 80px rgba(109, 40, 217, 0.35));
+  animation: sphere-breathe 6.5s ease-in-out infinite;
+  transform-origin: 50% 50%;
+  will-change: transform, opacity, filter;
+}
+@keyframes sphere-breathe {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.55;
+    filter:
+      drop-shadow(0 0 30px rgba(139, 92, 246, 0.45))
+      drop-shadow(0 0 80px rgba(109, 40, 217, 0.35));
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.78);
+    opacity: 0.85;
+    filter:
+      drop-shadow(0 0 50px rgba(196, 181, 253, 0.7))
+      drop-shadow(0 0 120px rgba(139, 92, 246, 0.55));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sphere-grid { animation: none; }
+}
+
 /* ---------- Base ---------- */
 
 @layer base {
