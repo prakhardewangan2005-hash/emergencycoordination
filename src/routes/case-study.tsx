@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { FloatingCard } from "@/components/FloatingCard";
+import { SectionScroller } from "@/components/SectionScroller";
 import { useReveal } from "@/hooks/useReveal";
 import commandImg from "@/assets/hero-command.png";
 import meshImg from "@/assets/mockup-mesh.png";
@@ -22,6 +23,14 @@ function CaseStudyPage() {
   const ref = useReveal();
   return (
     <PageShell>
+      <SectionScroller
+        sections={[
+          { id: "cs-hero", label: "Intro" },
+          { id: "cs-prompt", label: "Prompt" },
+          { id: "cs-research", label: "Research" },
+          { id: "cs-framing", label: "Framing" },
+        ]}
+      />
       <div ref={ref}>
         <CaseHero />
         <Prompt />
