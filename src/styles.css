@@ -489,8 +489,8 @@
   will-change: transform, filter;
 }
 @keyframes hero-float {
-  0%, 100% { transform: translateY(0) rotateX(6deg) rotateY(-4deg) translateZ(0); }
-  50%      { transform: translateY(-14px) rotateX(6deg) rotateY(-4deg) translateZ(20px); }
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
 }
 @keyframes hero-glow-pulse {
   0%, 100% {
