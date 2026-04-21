@@ -531,7 +531,7 @@ function FeaturesSection() {
     },
   ];
   return (
-    <section className="relative px-6 py-32 md:py-40">
+    <section id="features" className="relative px-6 py-32 md:py-40">
       <div className="mx-auto max-w-[1280px]">
         <div className="reveal mb-16 max-w-[760px]">
           <p className="kicker">What's inside Signal</p>
