@@ -1,5 +1,11 @@
 # 🚑 Signal — Emergency Coordination System
 
+![License](https://img.shields.io/badge/license-MIT-green)
+![Deploy](https://img.shields.io/badge/deployed-on%20Render-blue)
+![Status](https://img.shields.io/badge/status-active-success)
+![Made With](https://img.shields.io/badge/made%20with-React%20%2B%20Vite-61DAFB)
+![Stars](https://img.shields.io/github/stars/prakhardewangan2005-hash/emergencycoordination?style=social)
+
 🔗 **Live Demo:**  
 https://emergencycoordination-1.onrender.com
 
