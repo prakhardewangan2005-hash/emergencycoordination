@@ -1,121 +1,138 @@
-# 🚑 Signal - Emergency Coordination System 
+# 🚑 Signal — Emergency Coordination System
 
 🔗 **Live Demo:**  
-https://emergencycoordination.lovable.app/
+https://emergencycoordination-1.onrender.com
 
 ---
 
 ## 🌍 Overview
 
-**Emergency Coordination System (EmergenX)** is an AI-powered platform designed to **reduce emergency response time** by intelligently connecting patients with the **nearest suitable hospital and ambulance** in real time.
+**Signal** is a real-time emergency coordination platform designed to minimize response time during critical situations by intelligently connecting patients with the nearest suitable hospitals and ambulance services.
 
-In critical situations, delays in reaching the right medical facility can cost lives. This system bridges that gap using **smart matching algorithms and real-time coordination**.
+The system leverages location-aware matching and automated coordination to eliminate delays caused by manual search and fragmented communication.
 
 ---
 
 ## ⚡ Problem Statement
 
-- Delays in emergency response lead to preventable deaths  
-- Lack of coordination between patients, hospitals, and ambulance services  
-- Manual processes (calls, searching hospitals) waste crucial time  
+In emergency scenarios:
+- ⏱️ Response delays can lead to loss of life  
+- 📞 Manual coordination between hospitals and ambulances is inefficient  
+- 🏥 Patients often reach facilities lacking required specialization  
 
 ---
 
 ## 💡 Solution
 
-EmergenX provides:
-- 📍 **Automatic location detection (GPS-based)**
-- 🤖 **AI-driven hospital & ambulance matching**
-- 🚑 **Instant dispatch system**
-- 🔗 **End-to-end coordination without manual intervention**
+Signal provides an automated, intelligent coordination layer that:
+- Detects user location in real time  
+- Matches patients with the most appropriate hospital  
+- Allocates the nearest available ambulance  
+- Reduces human dependency in critical decision-making  
 
 ---
 
-## 🛠️ How It Works
+## 🛠️ System Workflow
 
-1. **Submit Emergency Request**  
-   - User enters patient details  
-   - Location captured automatically  
+1. Emergency Request Initiation  
+   - User submits request with minimal input  
+   - Location captured via browser APIs  
 
-2. **AI Matching System**  
-   - Finds the nearest hospital with required specialization  
-   - Assigns the closest available ambulance  
+2. Matching Engine  
+   - Filters hospitals based on specialization  
+   - Computes nearest options using distance logic  
+   - Selects optimal ambulance based on proximity  
 
-3. **Emergency Response Activated**  
-   - Ambulance dispatched instantly  
-   - Real-time coordination ensured  
+3. Dispatch & Coordination  
+   - Ambulance assigned instantly  
+   - Request routed to selected hospital  
+
+---
+
+## 🧠 Core Logic (Matching Strategy)
+
+The system uses a simplified decision pipeline:
+- 📍 Distance-based filtering (nearest resources)  
+- 🏥 Capability matching (hospital specialization)  
+- 🚑 Resource availability prioritization  
+
+This modular logic can be extended into a full-scale optimization or ML-based system.
 
 ---
 
 ## 🚀 Features
 
-- 🔥 Real-time emergency request system  
-- 🧠 AI-based smart matching  
-- 📍 GPS-enabled location tracking  
+- ⚡ Real-time emergency request handling  
+- 📍 Location-based intelligent matching  
 - 🚑 Automated ambulance allocation  
 - 🏥 Hospital specialization filtering  
-- ⚡ Fast and seamless UX (no calls required)  
+- 💡 Minimal-input UX for critical situations  
+- 🌐 Fully deployed and accessible web interface  
 
 ---
 
 ## 🧱 Tech Stack
 
-> *(Update this section based on your actual implementation)*
+- Frontend: Vite + React  
+- Deployment: Render (Static Site Hosting)  
+- APIs: Browser Geolocation API  
+- Architecture: Client-side SPA (Single Page Application)  
 
-- **Frontend:** React / Next.js  
-- **Backend:** Node.js / Express  
-- **Database:** MongoDB / Firebase  
-- **APIs:** Maps / Location Services  
-- **AI Logic:** Custom Matching Algorithm / ML  
+---
+
+## 🏗️ Architecture Overview
+
+User → Request Input → Location Capture → Matching Logic → Hospital + Ambulance Selection → Response Output
 
 ---
 
 ## 📊 Impact
 
-- ⏱️ Reduces emergency response time  
-- 🏥 Ensures correct hospital allocation  
-- ❤️ Potential to save lives at scale  
+- ⏱️ Reduces emergency response delay  
+- 🏥 Improves hospital allocation accuracy  
+- 🚑 Optimizes resource utilization  
+- ❤️ Potential to scale into real-world life-saving infrastructure  
 
 ---
 
 ## ⚠️ Disclaimer
 
-> 🚧 This is a **prototype/demo application**.  
-> No real emergency services are currently connected.
+This is a prototype system built for demonstration and learning purposes.  
+It does not connect to real emergency services.
 
 ---
 
 ## 📸 Screenshots
 
-*(Add screenshots of your UI here)*  
+(Add UI screenshots here)
 
 ---
 
 ## 🧪 Future Improvements
 
-- 📡 Integration with real ambulance networks  
+- 📡 Real-time ambulance tracking (GPS integration)  
 - 🏥 Live hospital database with bed availability  
-- 📱 Mobile app version (Android/iOS)  
-- 📊 Real-time tracking dashboard  
-- 🔔 Notification & alert system  
+- 🤖 ML-based predictive allocation system  
+- 📱 Mobile app (Android / iOS)  
+- 🔔 Alert and notification system  
+- 🌍 Multi-city scalability  
 
 ---
 
 ## 🤝 Contributing
 
 Contributions are welcome!  
-Feel free to fork the repo and submit a PR.
+Feel free to fork the repo and submit pull requests.
 
 ---
 
 ## 📜 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the MIT License.
 
 ---
 
 ## 👨‍💻 Author
 
-**Prakhar Dewangan**  
-- 🎓 B.Tech ECE, IIIT Allahabad  
-- 🚀 Interested in AI, Systems & Product Development  
+Prakhar Dewangan  
+B.Tech ECE, IIIT Allahabad  
